@@ -1,84 +1,72 @@
-class App {
-  constructor() {
-    this.navLinks = document.querySelectorAll('.nav-links a[data-route]');
-    this.ctaButtons = document.querySelectorAll('button[data-route]');
-    this.sections = document.querySelectorAll('section');
-    this.nav = document.querySelector('nav');
-    
-    this.init();
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  // Navigation Scroll Setup
+  const nav = document.querySelector('nav');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const btnBuy = document.querySelector('.btn-buy');
 
-  init() {
-    // Smooth scrolling for nav links
-    this.navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.target.dataset.route;
-        this.scrollToTarget(targetId);
-      });
-    });
-
-    // Smooth scrolling for CTA buttons
-    this.ctaButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const targetId = e.currentTarget.dataset.route; // Use currentTarget to avoid issues if clicking on an inner icon
-        this.scrollToTarget(targetId);
-      });
-    });
-
-    // Setup Intersection Observer for active link mapping
-    const observerOptions = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          this.updateActiveLink(id);
-        }
-      });
-    }, observerOptions);
-
-    this.sections.forEach(section => {
-      observer.observe(section);
-    });
-    
-    // Header shadow on scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        this.nav.classList.add('scrolled');
-      } else {
-        this.nav.classList.remove('scrolled');
-      }
-    });
-  }
-
-  scrollToTarget(id) {
-    const targetElement = document.getElementById(id);
-    if (targetElement) {
+  const scrollToTarget = (id) => {
+    const target = document.getElementById(id);
+    if (target) {
       window.scrollTo({
-        top: targetElement.offsetTop - 80, // Offset for sticky header
+        top: target.offsetTop - 60,
         behavior: 'smooth'
       });
-      // Optionally update URL hash
-      history.pushState(null, null, `#${id}`);
-      this.updateActiveLink(id);
     }
-  }
+  };
 
-  updateActiveLink(id) {
-    this.navLinks.forEach(link => {
-      link.classList.remove('active');
-      if(link.dataset.route === id) {
-        link.classList.add('active');
-      }
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = e.target.getAttribute('href').replace('#', '');
+      scrollToTarget(targetId);
+    });
+  });
+
+  if (btnBuy) {
+    btnBuy.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToTarget('finance');
     });
   }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  new App();
+  // Apple-style Fade Up Animation using Intersection Observer
+  const fadeElements = document.querySelectorAll('.fade-up');
+  
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optional: unobserve if you only want it to animate once
+        // fadeObserver.unobserve(entry.target);
+      } else {
+        // Remove this else block if you want the animation to happen only once.
+        // Keeping it makes elements fade out when scrolling past them and fade back in.
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  fadeElements.forEach(el => {
+    fadeObserver.observe(el);
+  });
+
+  // Dark Nav adjustment based on section background
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('dark-section')) {
+          nav.classList.add('dark-nav');
+        } else {
+          nav.classList.remove('dark-nav');
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
 });
