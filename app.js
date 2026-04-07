@@ -1,66 +1,84 @@
 class App {
   constructor() {
-    this.routes = {
-      'home': document.getElementById('home'),
-      'product': document.getElementById('product'),
-      'b2b': document.getElementById('b2b'),
-      'about': document.getElementById('about'),
-      'investors': document.getElementById('investors')
-    };
-    
     this.navLinks = document.querySelectorAll('.nav-links a[data-route]');
     this.ctaButtons = document.querySelectorAll('button[data-route]');
+    this.sections = document.querySelectorAll('section');
+    this.nav = document.querySelector('nav');
     
     this.init();
   }
 
   init() {
-    // Event listeners
+    // Smooth scrolling for nav links
     this.navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        this.navigate(e.target.dataset.route);
+        const targetId = e.target.dataset.route;
+        this.scrollToTarget(targetId);
       });
     });
 
+    // Smooth scrolling for CTA buttons
     this.ctaButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        this.navigate(e.target.dataset.route);
+        const targetId = e.currentTarget.dataset.route; // Use currentTarget to avoid issues if clicking on an inner icon
+        this.scrollToTarget(targetId);
       });
     });
 
-    // Handle initial route
-    const hash = window.location.hash.replace('#', '') || 'home';
-    this.navigate(hash);
+    // Setup Intersection Observer for active link mapping
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          this.updateActiveLink(id);
+        }
+      });
+    }, observerOptions);
+
+    this.sections.forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        this.nav.classList.add('scrolled');
+      } else {
+        this.nav.classList.remove('scrolled');
+      }
+    });
   }
 
-  navigate(routeId) {
-    if(!this.routes[routeId]) return;
+  scrollToTarget(id) {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80, // Offset for sticky header
+        behavior: 'smooth'
+      });
+      // Optionally update URL hash
+      history.pushState(null, null, `#${id}`);
+      this.updateActiveLink(id);
+    }
+  }
 
-    // Update URL hash without jumping
-    history.pushState(null, null, `#${routeId}`);
-
-    // Hide all sections
-    Object.values(this.routes).forEach(section => {
-      if(section) section.classList.remove('active');
-    });
-
-    // Show target section
-    this.routes[routeId].classList.add('active');
-
-    // Update Active Nav Link
+  updateActiveLink(id) {
     this.navLinks.forEach(link => {
       link.classList.remove('active');
-      if(link.dataset.route === routeId) {
+      if(link.dataset.route === id) {
         link.classList.add('active');
       }
     });
-
-    window.scrollTo(0, 0);
   }
 }
 
-// Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
   new App();
 });
