@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarkGlass — Коммуникация без барьеров.</title>
+  <meta name="description" content="StarkGlass: Умные AR-очки для двустороннего перевода с жестового языка в реальном времени. Инновации для медицины и повседневной жизни.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="logo" data-route="home">Stark<span>Glass</span></a>
+    <ul class="nav-links">
+      <li><a href="#home" data-route="home" class="active">Главная</a></li>
+      <li><a href="#product" data-route="product">Продукт и Технологии</a></li>
+      <li><a href="#b2b" data-route="b2b">Для Медицины (B2B)</a></li>
+      <li><a href="#about" data-route="about">О Команде</a></li>
+      <li><a href="#investors" data-route="investors">Инвесторам</a></li>
+    </ul>
+    <button class="btn-primary" data-route="b2b">Оформить предзаказ</button>
+  </nav>
+
+  <main id="app">
+    <!-- Home Section -->
+    <section id="home" class="active">
+      <div class="hero-content">
+        <span class="hero-slogan">Инновации в AR</span>
+        <h1>Komunikace bez bariér.<br> Život bez limitů.</h1>
+        <p>Первые умные очки с функциями двустороннего реал-тайм перевода, стирающие границы общения между глухими и слышащими людьми. Свободные руки, естественный зрительный контакт, абсолютная приватность.</p>
+        <button class="btn-primary" data-route="product">Изучить технологию</button>
+      </div>
+      <div class="hero-image">
+        <div class="glass-mockup">
+          <div class="glass-mockup-inner">
+            <!-- Simulated AR UI inside lens -->
+            <div style="text-align: center;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"></path><rect x="3" y="6" width="12" height="12" rx="2" ry="2"></rect></svg>
+              <h3 style="margin-top: 1rem; font-size: 1.2rem;">Live AR Translation</h3>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--primary);">"Patient reports severe pain in the abdomen."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product & Tech Section -->
+    <section id="product">
+      <h2>Технологии будущего уже сегодня</h2>
+      <p>Стильная и легкая оправа из переработанных материалов скрывает мощную систему компьютерного зрения и AI.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+          <h3>Широкоугольные микро-камеры</h3>
+          <p>Встроенные камеры захватывают движения рук с широким полем зрения, обеспечивая точный анализ жестов в любых условиях.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3>AR-дисплей</h3>
+          <p>Текстовый перевод отображается на внутренней линзе, позволяя сохранять зрительный контакт с собеседником.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3>Продвинутый CV & AI</h3>
+          <p>Двусторонний перевод: жестовый язык трансформируется в текст/аудио, а устная речь — в текст на AR-экране.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <h3>Медицинский словарь</h3>
+          <p>Специализированная языковая модель со встроенным анатомическим и медицинским словарем для экстренных ситуаций.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Healthcare Section -->
+    <section id="b2b">
+      <h2>Решение для медицины (B2B)</h2>
+      <p>Наша первостепенная фокусная группа — медицинские работники. В ситуациях, когда важна каждая секунда, ожидание сурдопереводчика может стоить жизни.</p>
+
+      <div style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
+        <div class="card" style="flex: 1; min-width: 300px;">
+          <h3 style="color: var(--primary);">Персона: Mgr. Jana Nováková</h3>
+          <p class="highlight" style="font-weight: 600; color: #fff;">Главная медсестра отделения неотложной помощи (38 лет)</p>
+          <p>Ей требуется мгновенная коммуникация со свободными руками во время приема пациентов. StarkGlass экономит критически важные минуты при постановке диагноза глухому пациенту.</p>
+        </div>
+
+        <div class="card" style="flex: 1; min-width: 300px;">
+          <h3 style="color: var(--primary);">Объем Рынка (Чехия)</h3>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+            <li>✓ Работники общественного здравоохранения: <strong>~410,000</strong></li>
+            <li>✓ Трудоспособного возраста: <strong>328,000</strong></li>
+            <li>✓ Полевые/Практикующие работники: <strong>229,000</strong></li>
+            <li>✓ Регулярно контактируют с пациентами с нарушением слуха: <strong>~34,000</strong></li>
+            <li style="color: #fff; font-weight: bold; border-top: 1px solid var(--surface-border); padding-top: 0.5rem; margin-top: 0.5rem;">Целевой спрос (B2B): ~27,000 специалистов</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Team Section -->
+    <section id="about">
+      <h2>О Команде & SWOT Анализ</h2>
+      <p>Проект "StarkGlass" разработан "Team 3" (ŠKODA Auto Vysoká škola). Наш бренд символизирует мощь и инновации ("Stark") с прямой отсылкой к AR-технологиям ("Glass").</p>
+
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--primary);">Команда Стартапа</h3>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Aianat Sundetbay</h4>
+          <p style="font-size: 0.9rem; color: var(--primary);">Top Manager</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Svetlana Zharnova</h4>
+          <p style="font-size: 0.9rem; color: var(--primary);">Product Manager</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Daniyal Zhumagulov</h4>
+          <p style="font-size: 0.9rem; color: var(--primary);">Pricing</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Ademi Sagynbay</h4>
+          <p style="font-size: 0.9rem; color: var(--primary);">Distribution</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Assanali Kabylgazy</h4>
+          <p style="font-size: 0.9rem; color: var(--primary);">Promotion</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 4rem; margin-bottom: 1.5rem; color: var(--primary);">SWOT Анализ</h3>
+      <div class="grid">
+        <div class="card" style="border-top: 3px solid #3EB489;">
+          <h4>Сильные стороны (Strengths)</h4>
+          <p style="font-size: 0.95rem;">Уникальный реал-тайм 2-сторонний перевод, "свободные руки", высокий социальный импакт, полный контроль над проприетарным ПО.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #ef4444;">
+          <h4>Слабые стороны (Weaknesses)</h4>
+          <p style="font-size: 0.95rem;">Высокие R&D и производственные расходы, ограничения батареи, зависимость от интернета для облачных ИИ-вычислений.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #3b82f6;">
+          <h4>Возможности (Opportunities)</h4>
+          <p style="font-size: 0.95rem;">Рост CSR бюджетов корпораций, субсидии ЕС на инклюзивные технологии, стремительное развитие удешевляющегося AI.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #f59e0b;">
+          <h4>Угрозы (Threats)</h4>
+          <p style="font-size: 0.95rem;">GDPR и приватность (камеры в паблике), риск копирования ИТ-гигантами (Meta, Apple) с безграничными бюджетами.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Investors & Business Plan -->
+    <section id="investors">
+      <h2>Финансовая Стратегия и Инвестиции</h2>
+      <p>Стратегия первого года — пилотная партия объемом <strong>1,000 единиц</strong> для тестирования B2B рынка, сбора фидбека и оптимизации ПО перед глобальным масштабированием.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Показатель (на единицу товара)</th>
+            <th>Сумма (Kč)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Разработка/Амортизация (SW, серверы)</td>
+            <td>9,000 Kč</td>
+          </tr>
+          <tr>
+            <td>Энергия / Работа ИИ серверов</td>
+            <td>1,200 Kč</td>
+          </tr>
+          <tr>
+            <td>Маркетинг, аренда, администрирование</td>
+            <td>2,400 Kč</td>
+          </tr>
+          <tr>
+            <td>Зарплаты менеджмента</td>
+            <td>3,600 Kč</td>
+          </tr>
+          <tr style="background: rgba(1, 50, 32, 0.3);">
+            <td class="highlight">Итого: Постоянные издержки</td>
+            <td class="highlight">16,200 Kč</td>
+          </tr>
+          <tr>
+            <td>AR-оптика и камеры (чипы ИИ)</td>
+            <td>12,000 Kč</td>
+          </tr>
+          <tr>
+            <td>Материалы оправы (40% recycle) + сборка</td>
+            <td>1,720 Kč</td>
+          </tr>
+          <tr>
+            <td>Хранение, упаковка, логистика</td>
+            <td>2,000 Kč</td>
+          </tr>
+          <tr style="background: rgba(1, 50, 32, 0.3);">
+            <td class="highlight">Итого: Переменные издержки</td>
+            <td class="highlight">15,720 Kč</td>
+          </tr>
+          <tr style="background: rgba(62, 180, 137, 0.2); border-top: 2px solid var(--primary);">
+            <td class="highlight">Полная себестоимость (Cost per unit)</td>
+            <td class="highlight">31,920 Kč</td>
+          </tr>
+          <tr style="background: rgba(62, 180, 137, 0.4);">
+            <td class="highlight">Розничная цена (Target Market Price)</td>
+            <td class="highlight">40,000 Kč</td>
+          </tr>
+          <tr>
+            <td style="color: var(--primary); font-weight: bold;">Валовая прибыль с единицы (Gross Margin)</td>
+            <td style="color: var(--primary); font-weight: bold;">8,080 Kč</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="margin-bottom: 1rem;">
+      <a href="#home" class="logo" style="justify-content: center; font-size: 1.2rem;">Stark<span>Glass</span></a>
+    </div>
+    <p style="font-size: 0.9rem;">&copy; 2026 Team 3 - ŠKODA Auto Vysoká škola. Все права защищены.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
