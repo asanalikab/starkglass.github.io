@@ -11,8 +11,26 @@
 
   <!-- Minimalist Nav -->
   <nav>
-    <a href="#hero" class="logo-container">
-      <img src="logo.png" alt="StarkGlass Logo">
+    <a href="#hero" class="logo-container" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+      <svg width="40" height="40" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Glasses Frame -->
+        <path d="M10 20 L30 20 C40 20 40 40 30 40 L15 40 C5 40 5 20 15 20 Z" />
+        <path d="M70 20 L90 20 C100 20 100 40 90 40 L75 40 C65 40 65 20 75 20 Z" />
+        <path d="M40 25 C45 20 55 20 60 25" /> <!-- Bridge -->
+        <path d="M10 20 L0 15" /> <!-- Left arm -->
+        <path d="M90 20 L100 15" /> <!-- Right arm -->
+        
+        <!-- Left Lens (Sound Waves) -->
+        <path d="M15 30 A5 5 0 0 1 15 20" stroke-width="2" />
+        <path d="M20 33 A8 8 0 0 1 20 17" stroke-width="2" />
+        <path d="M25 36 A11 11 0 0 1 25 14" stroke-width="2" />
+        
+        <!-- Right Lens (Speech Bubble) -->
+        <path d="M70 23 L85 23 L85 33 L75 33 L72 38 L72 33 L70 33 Z" stroke-width="2" />
+        <line x1="73" y1="26" x2="82" y2="26" stroke-width="2" />
+        <line x1="73" y1="29" x2="79" y2="29" stroke-width="2" />
+      </svg>
+      <span style="font-weight: 700; font-size: 1.5rem; letter-spacing: -0.05em;">StarkGlass</span>
     </a>
     <ul class="nav-links">
       <li><a href="#overview">Обзор</a></li>
