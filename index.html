@@ -1,199 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StarkGlass - Откройте мир без барьеров.</title>
-  <meta name="description" content="Умные AR-очки для реал-тайм перевода. StarkGlass. Коммуникация без барьеров.">
+  <title>StarkGlass — Komunikace bez bariér</title>
+  <meta name="description" content="StarkGlass: chytré AR brýle pro obousměrný překlad v reálném čase. Komunikace bez bariér. Život bez limitů.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Minimalist Nav -->
   <nav>
-    <a href="#hero" class="logo-container" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
-      <svg width="40" height="40" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M10 20 L30 20 C40 20 40 40 30 40 L15 40 C5 40 5 20 15 20 Z" />
-        <path d="M70 20 L90 20 C100 20 100 40 90 40 L75 40 C65 40 65 20 75 20 Z" />
-        <path d="M40 25 C45 20 55 20 60 25" />
-        <path d="M10 20 L0 15" />
-        <path d="M90 20 L100 15" />
-        <path d="M15 30 A5 5 0 0 1 15 20" stroke-width="2" />
-        <path d="M20 33 A8 8 0 0 1 20 17" stroke-width="2" />
-        <path d="M25 36 A11 11 0 0 1 25 14" stroke-width="2" />
-        <path d="M70 23 L85 23 L85 33 L75 33 L72 38 L72 33 L70 33 Z" stroke-width="2" />
-        <line x1="73" y1="26" x2="82" y2="26" stroke-width="2" />
-        <line x1="73" y1="29" x2="79" y2="29" stroke-width="2" />
-      </svg>
-      <span style="font-weight: 700; font-size: 1.5rem; letter-spacing: -0.05em;">StarkGlass</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#technologies">Технологии</a></li>
-      <li><a href="#healthcare">B2B Медицина</a></li>
-      <li><a href="#finance">Инвестиции</a></li>
-      <li><a href="#team">Команда</a></li>
-    </ul>
-    <a href="#purchase" class="btn-buy">Предзаказ</a>
+    <a href="index.html" class="nav-logo">Stark<span class="mint">Glass</span></a>
+    <a href="technologie.html">Technologie</a>
+    <a href="zdravotnictvi.html">Zdravotnictví</a>
+    <a href="investice.html">Investice</a>
+    <a href="tym.html">Tým</a>
+    <a href="objednavka.html" class="nav-cta">Předobjednat</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="dark-section">
-    <div class="fade-up">
-      <h3 style="color: var(--green-mint);">StarkGlass AR</h3>
-      <h1>Коммуникация без барьеров.<br>Жизнь без лимитов.</h1>
-      <p class="large-text">
-        Первые умные очки с функциями двустороннего перевода с жестового языка в реальном времени. Свободные руки, естественный контакт, абсолютная приватность.
-      </p>
-      <div class="stark-links">
-        <a href="#technologies">Узнать больше ></a>
-        <a href="#purchase">Оформить предзаказ ></a>
-      </div>
+  <!-- HERO -->
+  <div class="hero dark">
+    <span class="hero-label">StarkGlass AR</span>
+    <h1>Komunikace bez bariér.<br>Život bez limitů.</h1>
+    <p class="subtitle">
+      První chytré brýle s obousměrným překladem znakového jazyka v reálném čase. Volné ruce, přirozený oční kontakt, absolutní soukromí.
+    </p>
+    <div class="hero-links">
+      <a href="technologie.html">Zjistit více ›</a>
+      <a href="objednavka.html">Předobjednat ›</a>
     </div>
+    <img src="glasses.png" alt="StarkGlass AR brýle" class="hero-img">
+  </div>
 
-    <!-- Huge Product Image Container -->
-    <div class="hero-image-wrapper fade-up">
-      <img src="glasses.png" alt="StarkGlass Product View">
-    </div>
-  </section>
+  <!-- OVERVIEW -->
+  <div class="section gray full">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="section-header fade-in">
+        <h2>Pohled na komunikaci se mění.</h2>
+        <p>Lehký a stylový design ukrývá sílu počítačového vidění a pokročilé umělé inteligence.</p>
+      </div>
 
-  <!-- Technologies Section -->
-  <section id="technologies" class="gray-section">
-    <div class="fade-up" style="text-align: center; max-width: 800px;">
-      <h2>Технологии будущего.</h2>
-      <p class="large-text">
-        Легкая, стильная оправа скрывает в себе продвинутую аппаратную и программную систему. Ваши слова визуализируются прямо перед вами.
-      </p>
+      <div class="feature-grid fade-in">
+        <div class="feature-card">
+          <h3 class="mint">AR displej.</h3>
+          <p>Překlad textu se zobrazuje přímo na vnitřní straně čočky. Udržujte přirozený oční kontakt, aniž byste se dívali na telefon.</p>
+        </div>
+        <div class="feature-card">
+          <h3 class="mint">Mikrokamery.</h3>
+          <p>Širokoúhlé senzory zachycují i ty nejjemnější pohyby rukou a překládají znakový jazyk do textu téměř okamžitě.</p>
+        </div>
+        <div class="feature-card">
+          <h3 class="mint">AI v reálném čase.</h3>
+          <p>Proprietární algoritmus počítačového vidění analyzuje prostředí nepřetržitě s latencí pod 200 ms.</p>
+        </div>
+        <div class="feature-card">
+          <h3 class="mint">Lékařský slovník.</h3>
+          <p>Neuronová síť vytrénovaná na specializovaném anatomickém a medicínském slovníku pro bezchybnou přesnost v klinickém prostředí.</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="feature-grid fade-up">
-      <div class="feature-box">
-        <h3 class="accent-text">AR-Дисплей.</h3>
-        <p>Текстовый перевод отображается на внутренней линзе с кристальной четкостью. Не отвлекайтесь на экран смартфона, сохраняйте зрительный контакт на протяжении всего разговора.</p>
+  <!-- STATS -->
+  <div class="section full" style="padding-bottom: 40px;">
+    <div class="stats-row fade-in">
+      <div class="stat">
+        <div class="number">27 000</div>
+        <div class="label">Potenciální B2B zákazníci (ČR)</div>
       </div>
-      <div class="feature-box">
-        <h3 class="accent-text">Микро-камеры.</h3>
-        <p>Встроенные сверхширокоугольные камеры считывают малейшие движения рук. Жестовый язык переводится в идеальный текст и аудио практически без задержек.</p>
+      <div class="stat">
+        <div class="number">&lt;0,2s</div>
+        <div class="label">Latence překladu</div>
       </div>
-      <div class="feature-box">
-        <h3 class="accent-text">Компьютерное Зрение (CV).</h3>
-        <p>Наш проприетарный алгоритм CV непрерывно анализирует среду в реальном времени. Мы не зависим от стандартных медленных модулей ИИ.</p>
-      </div>
-      <div class="feature-box">
-        <h3 class="accent-text">Медицинский Словарь.</h3>
-        <p>Нейросеть обучена на специализированном медицинском и анатомическом словаре, обеспечивая безупречную точность терминов при назначении лечения.</p>
+      <div class="stat">
+        <div class="number">40 %</div>
+        <div class="label">Recyklovaných materiálů</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- B2B Healthcare Section -->
-  <section id="healthcare" class="dark-section">
-    <div class="fade-up" style="text-align: center; max-width: 800px;">
-      <h3 style="color: var(--green-mint);">Эксклюзивно для B2B</h3>
-      <h2>Когда счет идет на секунды.</h2>
-      <p class="large-text">
-        Разработано с фокусом на работников общественного здравоохранения Чехии для оказания экстренной помощи.
-      </p>
+  <!-- POWERED BY -->
+  <div class="section full" style="padding-top: 20px; padding-bottom: 60px;">
+    <div class="section-header fade-in">
+      <p style="font-size: 0.9rem;">Projekt vyvinutý v rámci</p>
+      <h2 style="font-size: 1.8rem; margin-top: 0.25rem;">ŠKODA Auto Vysoká škola</h2>
     </div>
-
-    <div class="feature-grid fade-up">
-      <div class="feature-box">
-        <h3>Для профессионалов.</h3>
-        <p><b>Персона:</b> Mgr. Jana Nováková, главная медсестра. Очки StarkGlass экономят ей критически важные минуты при обследовании неслышащих пациентов без вызова живого сурдопереводчика.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Объем рынка Чехии.</h3>
-        <p>Из ~410,000 медработников, около 34,000 специалистов регулярно контактируют с профильными пациентами. Наш первичный B2B-рынок оценивается в 27,000 врачей и медсестер.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Investment & SWOT Section -->
-  <section id="finance" class="white-section">
-    <div class="fade-up" style="text-align: center;">
-      <h3 class="accent-text">Бизнес Модель</h3>
-      <h2>Строгий расчет и планирование.</h2>
-      <p class="large-text">Стратегия минимизации рисков: выпуск пилотной партии (1,000 единиц) для проверки Unit-экономики.</p>
-    </div>
-
-    <div class="finance-container fade-up">
-      <div class="finance-row">
-        <span>Амортизация и разработка (SW, Server)</span>
-        <span>9,000 Kč</span>
-      </div>
-      <div class="finance-row">
-        <span>Аппаратная часть (AR-линзы, чипы ИИ, камеры)</span>
-        <span>12,000 Kč</span>
-      </div>
-      <div class="finance-row">
-        <span>Материалы оправы (40% recycle) и сборка</span>
-        <span>1,720 Kč</span>
-      </div>
-      <div class="finance-row">
-        <span>Маркетинг, логистика и администрирование</span>
-        <span>9,200 Kč</span>
-      </div>
-      <div class="finance-row total">
-        <span>Полная себестоимость (Cost per unit)</span>
-        <span>31,920 Kč</span>
-      </div>
-      <div class="finance-row total accent-text" style="font-size: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 1rem;">
-        <span>Целевая маржинальность (Gross Margin per unit)</span>
-        <span>+ 8,080 Kč</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section id="team" class="gray-section">
-    <div class="fade-up" style="text-align: center;">
-      <h2>Создатели инноваций.</h2>
-      <p class="large-text">StarkGlass — эксклюзивный проект Team 3 (ŠKODA Auto Vysoká škola).</p>
-    </div>
-    
-    <div class="team-grid fade-up">
-      <div class="team-member">
-        <h4>Aianat Sundetbay</h4>
-        <p>Top Manager</p>
-      </div>
-      <div class="team-member">
-        <h4>Svetlana Zharnova</h4>
-        <p>Product</p>
-      </div>
-      <div class="team-member">
-        <h4>Daniyal Zhumagulov</h4>
-        <p>Pricing</p>
-      </div>
-      <div class="team-member">
-        <h4>Ademi Sagynbay</h4>
-        <p>Distribution</p>
-      </div>
-      <div class="team-member">
-        <h4>Assanali Kabylgazy</h4>
-        <p>Promotion</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dedicated Purchase Section -->
-  <section id="purchase" class="dark-section" style="min-height: 70vh; justify-content: center; text-align: center;">
-    <div class="fade-up">
-      <h3 style="color: var(--green-mint);">Пилотный Выпуск</h3>
-      <h1 style="margin-bottom: 2rem;">Ваш StarkGlass. Покупайте прямо сейчас.</h1>
-      
-      <div style="background: rgba(255,255,255,0.05); padding: 4rem 2rem; border-radius: 30px; max-width: 600px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-        <h2 style="font-size: 3rem; margin-bottom: 0.5rem;">40,000 Kč</h2>
-        <p style="color: var(--text-secondary-light); margin-bottom: 3rem;">Розничная стоимость устройства из пилотной B2B партии (ограниченный тираж в 1,000 штук).</p>
-        
-        <button class="btn-buy" style="font-size: 1.25rem; padding: 1rem 3rem; border: none; cursor: pointer; display: inline-block;">
-          Добавить в корзину
-        </button>
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">Бесплатная доставка при предзаказе для медицинских учреждений Чехии.</p>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <footer>
-    <p>ŠKODA Auto Vysoká škola &copy; 2026 StarkGlass</p>
+    <p>© 2026 StarkGlass — Team 3 — ŠKODA Auto Vysoká škola. Všechna práva vyhrazena.</p>
   </footer>
 
   <script src="app.js"></script>
